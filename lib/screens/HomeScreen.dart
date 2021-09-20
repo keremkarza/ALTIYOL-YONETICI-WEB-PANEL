@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
           alignment: Alignment.topLeft,
           padding: const EdgeInsets.all(10),
           child: Text(
-            'Dashboard',
+            'Anasayfa',
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 36,

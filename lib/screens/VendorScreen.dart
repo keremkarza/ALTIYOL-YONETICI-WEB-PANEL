@@ -27,10 +27,10 @@ class _VendorScreenState extends State<VendorScreen> {
           child: Column(
             children: [
               Text(
-                'Vendors Page',
+                'Esnaflar Sayfası',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 36),
               ),
-              Text('Manage all the Vendors Activities'),
+              Text('Tüm Esnafları ve aktivitelerini yönet'),
               Divider(thickness: 5),
               MyVendorDataTable(),
               Divider(thickness: 5),

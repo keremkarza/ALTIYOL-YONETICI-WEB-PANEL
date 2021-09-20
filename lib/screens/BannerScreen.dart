@@ -26,13 +26,13 @@ class BannerScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Banners Page',
+                'BANNER SAYFASI',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 36,
                 ),
               ),
-              Text('Add / Delete Home Screen Banner Images'),
+              Text('ANASAYFA BANNER RESIMLERİNİ EKLE/SİL'),
               Divider(thickness: 5),
               MyBanner(),
               Divider(thickness: 5),

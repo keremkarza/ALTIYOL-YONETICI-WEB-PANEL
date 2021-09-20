@@ -18,6 +18,8 @@ class FirebaseServices {
       FirebaseFirestore.instance.collection('categories');
   CollectionReference boys = FirebaseFirestore.instance.collection('boys');
   CollectionReference admins = FirebaseFirestore.instance.collection('Admin');
+  CollectionReference orders = FirebaseFirestore.instance.collection('orders');
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   // Admin Services
   Future<QuerySnapshot> getAdminCredentials() {
@@ -47,7 +49,7 @@ class FirebaseServices {
       'password': password,
       'accVerified': false,
       'address': '',
-      'imageUrl': '',
+      'url': '',
       'location': GeoPoint(0, 0),
       'mobile': '',
       'name': '',
@@ -137,6 +139,26 @@ class FirebaseServices {
 
   deleteBannerImageFromDb(id) async {
     banners.doc(id).delete();
+  }
+
+  // Order Services
+  changeOrderStatus({id, status, query}) async {
+    orders.doc(id).update({
+      query: status == 'Ordered'
+          ? 'Accepted'
+          : status == 'Accepted'
+              ? 'Picked Up'
+              : status == 'Picked Up'
+                  ? 'On the way'
+                  : status == 'On the way'
+                      ? 'Delivered'
+                      : 'Rejected'
+    });
+  }
+
+  Future<DocumentSnapshot> getOrderDetails(docId) async {
+    DocumentSnapshot doc = await orders.doc(docId).get();
+    return doc;
   }
 
   // Vendor Services

@@ -19,52 +19,52 @@ class MySideBar {
       activeTextStyle: TextStyle(color: Colors.white),
       items: const [
         MenuItem(
-          title: 'Dashboard',
+          title: 'ANASAYFA',
           route: HomeScreen.id,
           icon: Icons.dashboard,
         ),
         MenuItem(
-          title: 'Banners',
+          title: 'BANNERLAR',
           route: BannerScreen.id,
           icon: Icons.image_search_rounded,
         ),
         MenuItem(
-          title: 'Categories',
+          title: 'KATEGORİLER',
           route: CategoriesScreen.id,
           icon: Icons.category_rounded,
         ),
         MenuItem(
-          title: 'Admin users',
+          title: 'ADMİNLER',
           route: AdminScreen.id,
           icon: Icons.supervised_user_circle_rounded,
         ),
         MenuItem(
-          title: 'Vendor users',
+          title: 'ESNAFLAR',
           route: VendorScreen.id,
           icon: Icons.storefront_rounded,
         ),
         MenuItem(
-          title: 'Delivery users',
+          title: 'KURYELER',
           route: DeliveryScreen.id,
           icon: Icons.motorcycle_outlined,
         ),
         MenuItem(
-          title: 'Orders',
+          title: 'SİPARİŞLER',
           route: OrderScreen.id,
           icon: Icons.shopping_basket_rounded,
         ),
         MenuItem(
-          title: 'Send Notification',
+          title: 'BİLDİRİM GÖNDER',
           route: NotificationScreen.id,
           icon: Icons.notifications,
         ),
         MenuItem(
-          title: 'Settings',
+          title: 'AYARLAR',
           route: SettingScreen.id,
           icon: Icons.settings,
         ),
         MenuItem(
-          title: 'Exit',
+          title: 'ÇIKIŞ YAP',
           route: ExitScreen.id,
           icon: Icons.exit_to_app,
         ),

@@ -31,7 +31,10 @@ class _CreateNewCarrierState extends State<CreateNewCarrier> {
                         _visible = true;
                       });
                     },
-                    child: Text('Create new delviery carrier')),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Sisteme yeni kurye ekle'),
+                    )),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:admin_multivendor_app/widgets/MySideBar.dart';
+import 'package:admin_multivendor_app/widgets/admin/MyAdminDataTable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 
@@ -20,12 +21,17 @@ class AdminScreen extends StatelessWidget {
         child: Container(
           alignment: Alignment.topLeft,
           padding: const EdgeInsets.all(10),
-          child: Text(
-            'Admin Page',
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 36,
-            ),
+          child: Column(
+            children: [
+              Text(
+                'Adminler Sayfası',
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 36),
+              ),
+              Text('Tüm Adminleri ve aktivitelerini yönet'),
+              Divider(thickness: 5),
+              MyAdminDataTable(),
+              Divider(thickness: 5),
+            ],
           ),
         ),
       ),

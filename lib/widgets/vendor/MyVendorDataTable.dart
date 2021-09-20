@@ -109,7 +109,7 @@ class _MyVendorDataTableState extends State<MyVendorDataTable> {
                   DataColumn(label: Text('Total Sales')),
                   DataColumn(label: Text('Mobile')),
                   DataColumn(label: Text('Email')),
-                  DataColumn(label: Text('View Details')),
+                  DataColumn(label: Text('Detayları Görüntüle')),
                 ],
                 //details
                 rows: _vendorDetailsRows(snapshot.data, _services),
@@ -131,11 +131,11 @@ class _MyVendorDataTableState extends State<MyVendorDataTable> {
               onPressed: () {
                 services.changeVendorStatus(
                   query: 'accVerified',
-                  id: document.data()['uid'],
-                  status: document.data()['accVerified'],
+                  id: document['uid'],
+                  status: document['accVerified'],
                 );
               },
-              icon: document.data()['accVerified']
+              icon: document['accVerified']
                   ? Icon(
                       Icons.check_circle,
                       color: Colors.green,
@@ -151,11 +151,11 @@ class _MyVendorDataTableState extends State<MyVendorDataTable> {
               onPressed: () {
                 services.changeVendorStatus(
                   query: 'isTopPicked',
-                  id: document.data()['uid'],
-                  status: document.data()['isTopPicked'],
+                  id: document['uid'],
+                  status: document['isTopPicked'],
                 );
               },
-              icon: document.data()['isTopPicked']
+              icon: document['isTopPicked']
                   ? Icon(
                       Icons.check_circle,
                       color: Colors.green,
@@ -164,7 +164,7 @@ class _MyVendorDataTableState extends State<MyVendorDataTable> {
             ),
           ),
           DataCell(
-            Text(document.data()['shopName']),
+            Text(document['shopName']),
           ),
           DataCell(
             Row(
@@ -179,10 +179,10 @@ class _MyVendorDataTableState extends State<MyVendorDataTable> {
           ),
           DataCell(Text('20.000')),
           DataCell(
-            Text(document.data()['mobile']),
+            Text(document['mobile']),
           ),
           DataCell(
-            Text(document.data()['email']),
+            Text(document['email']),
           ),
           DataCell(
             IconButton(
@@ -191,8 +191,8 @@ class _MyVendorDataTableState extends State<MyVendorDataTable> {
                 showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      print('uid: ${document.data()['uid']} girdi');
-                      return MyVendorDetails(uid: document.data()['uid']);
+                      print('uid: ${document['uid']} girdi');
+                      return MyVendorDetails(uid: document['uid']);
                     });
               },
               icon: Icon(Icons.info_outline),

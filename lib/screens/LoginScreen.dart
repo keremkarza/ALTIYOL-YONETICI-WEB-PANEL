@@ -26,14 +26,14 @@ class _LoginScreenState extends State<LoginScreen> {
     Future<void> _login() async {
       _services.getAdminCredentials().then((value) {
         value.docs.forEach((doc) async {
-          print(doc == null ? 'document error' : 'doc is ' + doc.toString());
+          print(doc == null ? 'dokuman hatası' : 'dokuman ' + doc.toString());
           Timer(Duration(seconds: 2), () async {
             if (mounted) {
               try {
                 if (await doc.get('username') == username) {
-                  print(username == null ? 'username error' : username);
+                  print(username == null ? 'kullanıcı adı hatası' : username);
                   if (await doc.get('password') == password) {
-                    print(password == null ? 'password error' : password);
+                    print(password == null ? 'şifre hatası' : password);
                     UserCredential userCredential = await FirebaseAuth.instance
                         .signInWithEmailAndPassword(
                             email: "admin@gmail.com", password: "Admin@123");
@@ -42,8 +42,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       return;
                     } else {
                       _services.showMyDialog(
-                          title: 'Login Error',
-                          message: 'Your attempt to logging in  failed.',
+                          title: 'Giris Hatasi',
+                          message: 'Denemen başarısızlıkla sonuçlandı.',
                           context: context);
                       return;
                     }
@@ -52,9 +52,9 @@ class _LoginScreenState extends State<LoginScreen> {
               } on FirebaseAuthException catch (e) {
                 //buraya şuan bu hatalar düşmüyor, istenilirse yukarıya else ler koyulsun.
                 if (e.code == 'user-not-found') {
-                  print('No user found for that email.');
+                  print('Bu email için bir kullanıcı bulunamadı.');
                 } else if (e.code == 'wrong-password') {
-                  print('Wrong password provided for that user.');
+                  print('Bu kullanıcı için yanlış şifre girildi.');
                 }
               }
               return;
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
             // Check for errors
             if (snapshot.hasError) {
               return Center(
-                child: Text('Connection Failed'),
+                child: Text('Bağlantı Hatası'),
               );
             }
 
@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         child: TextFormField(
                                           validator: (value) {
                                             if (value.isEmpty) {
-                                              return 'Enter Username';
+                                              return 'Kullanıcı Adı';
                                             }
                                             setState(() {
                                               username = value;
@@ -145,8 +145,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                           },
                                           decoration: InputDecoration(
                                             prefixIcon: Icon(Icons.person),
-                                            hintText: 'User Name',
-                                            labelText: 'User Name',
+                                            hintText: 'Kullanıcı adı',
+                                            labelText: 'Kullanıcı adı',
                                             contentPadding:
                                                 EdgeInsets.symmetric(
                                                     horizontal: 10.0),
@@ -171,10 +171,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                         child: TextFormField(
                                           validator: (value) {
                                             if (value.isEmpty) {
-                                              return 'Enter Password';
+                                              return 'Şifre';
                                             }
                                             if (value.length < 6) {
-                                              return 'Minimum 6 characters';
+                                              return 'Minimum 6 karakter';
                                             }
                                             setState(() {
                                               password = value;
@@ -185,8 +185,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                           decoration: InputDecoration(
                                             prefixIcon:
                                                 Icon(Icons.vpn_key_sharp),
-                                            labelText: 'Password',
-                                            hintText: 'Password',
+                                            labelText: 'Şifre',
+                                            hintText: 'Şifre',
                                             contentPadding:
                                                 EdgeInsets.symmetric(
                                                     horizontal: 10.0),
@@ -223,7 +223,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             }
                                           },
                                           child: Text(
-                                            'Login',
+                                            'Giriş Yap',
                                             style: TextStyle(
                                               color: Colors.white,
                                             ),

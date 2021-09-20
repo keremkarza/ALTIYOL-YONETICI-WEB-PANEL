@@ -27,7 +27,7 @@ class ExitScreen extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'Exit Page',
+                    'ÇIKIŞ SAYFASI',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 36,
@@ -44,8 +44,7 @@ class ExitScreen extends StatelessWidget {
                     child: TextButton(
                         onPressed: () {
                           FirebaseAuth.instance.signOut();
-                          print(
-                              'user is currently signed out with your click!');
+                          print('kullanıcı senin tıklamanla çıktı.');
                           Navigator.pushReplacementNamed(
                               context, LoginScreen.id);
                         },

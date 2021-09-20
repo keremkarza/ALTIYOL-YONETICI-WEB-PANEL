@@ -25,13 +25,13 @@ class CategoriesScreen extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Categories Page',
+                'KATEGOİLER SAYFASI',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 36,
                 ),
               ),
-              Text('Add New Categories and Sub Categories'),
+              Text('YENİ KATEGORİLER VE ALT KATEGORİLER EKLE'),
               Divider(thickness: 5),
               MyCategoryCreateWidget(),
               Divider(thickness: 5),

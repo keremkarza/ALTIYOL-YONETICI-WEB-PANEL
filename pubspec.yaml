@@ -12,20 +12,27 @@ dependencies:
   flutter:
     sdk: flutter
   # firebase
-  firebase_auth: ^0.18.4+1
-  cloud_firestore: ^0.14.0+1
-  firebase_core: ^0.5.3
-  firebase_storage: ^5.2.0
-  firebase: ^8.0.0
+  firebase_auth: any
+  cloud_firestore: any
+  firebase_core: any
+  firebase_storage: any
+  firebase: any
+  # others
   flutter_switch: any
-  universal_io: ^0.2.0
+  universal_io: ^2.0.4
+  # printing: any
+  # esc_pos_utils: ^1.0.0
+  #audioplayers: any
+
 
 
   # user intergace
   cupertino_icons: ^1.0.0
   ars_dialog: ^1.0.7
-  flutter_admin_scaffold: ^0.0.5
+  flutter_admin_scaffold: ^1.0.0
   chips_choice: ^2.0.1
+  just_audio: any
+  #just_audio_background: any
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +41,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/audio/
     - images/
   # fonts:
   #   - family: Schyler

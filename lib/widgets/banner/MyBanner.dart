@@ -38,7 +38,7 @@ class MyBanner extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(4),
                             child: Image.network(
-                              document.data()['image'],
+                              document['image'],
                               width: 500,
                               fit: BoxFit.fill,
                             ),

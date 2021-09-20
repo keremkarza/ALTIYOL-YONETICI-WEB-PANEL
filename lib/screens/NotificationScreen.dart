@@ -21,7 +21,7 @@ class NotificationScreen extends StatelessWidget {
           alignment: Alignment.topLeft,
           padding: const EdgeInsets.all(10),
           child: Text(
-            'Notification Page',
+            'Bildirim Sayfası ',
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 36,

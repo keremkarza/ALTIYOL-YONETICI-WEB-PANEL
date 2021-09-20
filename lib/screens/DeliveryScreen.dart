@@ -30,14 +30,13 @@ class DeliveryScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Delivery Carriers Screen',
+                  'KURYELER SAYFASI',
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 36,
                   ),
                 ),
-                Text(
-                    'Create new delivery carriers and manage all delivery carriers'),
+                Text('Tüm kuryeleri yönet'),
                 Divider(thickness: 5),
                 CreateNewCarrier(),
                 Divider(thickness: 5),
@@ -48,10 +47,10 @@ class DeliveryScreen extends StatelessWidget {
                   unselectedLabelColor: Colors.black54,
                   tabs: [
                     Tab(
-                      child: Text('NEW'),
+                      child: Text('YENİ'),
                     ),
                     Tab(
-                      child: Text('APPROVED'),
+                      child: Text('ONAYLANDI'),
                     ),
                   ],
                 ),

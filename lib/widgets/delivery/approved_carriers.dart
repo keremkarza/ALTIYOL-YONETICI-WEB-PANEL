@@ -60,40 +60,40 @@ class _ApprovedCarriersState extends State<ApprovedCarriers> {
       if (document != null) {
         return DataRow(cells: [
           DataCell(
-            document.data()['imageUrl'] != ''
+            document['url'] != ''
                 ? Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.network(
-                      document.data()['imageUrl'],
-                      fit: BoxFit.cover,
+                    child: Container(
+                      width: 40,
+                      child: Image.network(
+                        document['url'],
+                        //fit: BoxFit.cover,
+                      ),
                     ),
                   )
                 : Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: 60,
-                      child: Image.network(
-                        'https://firebasestorage.googleapis.com/v0/b/multivendor-app-9b552.appspot.com/o/assets%2FALTIYOL_LOGO.png?alt=media&token=579e324c-d996-43be-8264-157b2ea04c2f',
-                        fit: BoxFit.cover,
-                      ),
+                    child: Image.network(
+                      'https://firebasestorage.googleapis.com/v0/b/multivendor-app-9b552.appspot.com/o/assets%2FALTIYOL_LOGO.png?alt=media&token=579e324c-d996-43be-8264-157b2ea04c2f',
+                      fit: BoxFit.cover,
                     ),
                   ),
           ),
-          DataCell(Text(document.data()['name'])),
-          DataCell(Text(document.data()['mobile'])),
-          DataCell(Text(document.data()['email'])),
+          DataCell(Text(document['name'])),
+          DataCell(Text(document['mobile'])),
+          DataCell(Text(document['email'])),
           DataCell(Text(
-            document.data()['address'],
+            document['address'],
             style: TextStyle(),
             overflow: TextOverflow.ellipsis,
           )),
           DataCell(
-            document.data()['mobile'] == ''
+            document['mobile'] == ''
                 ? Text('No Registered')
                 : FlutterSwitch(
-                    activeText: "Approved",
-                    inactiveText: "Not Approved",
-                    value: document.data()['accVerified'],
+                    activeText: "Onaylandı",
+                    inactiveText: "Onaylanmadı",
+                    value: document['accVerified'],
                     valueFontSize: 10.0,
                     width: 110,
                     borderRadius: 30.0,
@@ -102,7 +102,7 @@ class _ApprovedCarriersState extends State<ApprovedCarriers> {
                       _services.updateCarrierStatus(
                           id: document.id,
                           context: context,
-                          accVerified: document.data()['accVerified']);
+                          accVerified: document['accVerified']);
                     },
                   ),
           ),

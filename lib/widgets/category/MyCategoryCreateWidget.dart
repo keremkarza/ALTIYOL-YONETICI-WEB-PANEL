@@ -98,7 +98,7 @@ class _MyCategoryCreateWidgetState extends State<MyCategoryCreateWidget> {
                               if (_categoryNameTextController.text.isEmpty) {
                                 return _services.showMyDialog(
                                   context: context,
-                                  title: 'Add New Category',
+                                  title: 'Yeni Kategori Ekle',
                                   message: 'New Category Name not Given',
                                 );
                               }
@@ -136,7 +136,10 @@ class _MyCategoryCreateWidgetState extends State<MyCategoryCreateWidget> {
                       print(_visible);
                     });
                   },
-                  child: Text('Add New Category')),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Yeni Kategori Ekle'),
+                  )),
             ),
           ],
         ),
