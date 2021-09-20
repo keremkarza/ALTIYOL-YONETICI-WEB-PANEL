@@ -344,16 +344,28 @@ class _MyOrderDetailsState extends State<MyOrderDetails> {
         insideList.add(DataRow(
           cells: [
             //0 yerine 0,1,2 diye gezmesi lazım
-            DataCell(Text(document['products'][i]['qty'].toString() + ' Adet')),
+            DataCell(Text(
+              document['products'][i]['qty'].toString() + ' Adet',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            )),
             DataCell(Container(
               width: 60,
               height: 60,
               child: Image.network(
                   document['products'][i]['productImage'].toString()),
             )),
-            DataCell(Text(document['products'][i]['productName'])),
-            DataCell(Text(document['products'][i]['price'].toString() + ' TL')),
-            DataCell(Text(document['products'][i]['total'].toString() + ' TL')),
+            DataCell(Text(
+              document['products'][i]['productName'],
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            )),
+            DataCell(Text(
+              document['products'][i]['price'].toString() + ' TL',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            )),
+            DataCell(Text(
+              document['products'][i]['total'].toString() + ' TL',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            )),
           ],
         ));
       }
@@ -367,8 +379,14 @@ class _MyOrderDetailsState extends State<MyOrderDetails> {
             child: Image.network(
                 document['products'][0]['productImage'].toString()),
           )),
-          DataCell(Text(document['products'][0]['productName'])),
-          DataCell(Text(document['products'][0]['price'].toString())),
+          DataCell(Text(
+            document['products'][0]['productName'],
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          )),
+          DataCell(Text(
+            document['products'][0]['price'].toString(),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          )),
           DataCell(Text(document['products'][0]['total'].toString())),
         ],
       );
